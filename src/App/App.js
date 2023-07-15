@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './App.css';
+import Card from "./components/Card/Card";
 
 function App() {
   const [data, setData] = useState(null);
@@ -14,9 +15,10 @@ function App() {
     <div className="App">
       <h1>PruebA</h1>
       <div className="card">
+
         <ul>
-          {data?.map((user) => (
-            <li key={user.id}>{user.name}</li>))}
+          {data?.map((user, index) => (
+            <Card name={user.name} key={user.id} />))}
         </ul>
       </div>
     </div>
